@@ -1,0 +1,4 @@
+interface:
+  display_name: "JD 定制简历"
+  short_description: "拆解岗位要求并生成证据约束的一页 A4 HTML 简历"
+  default_prompt: "使用 $tailor-resume-to-jd 根据公司、岗位和完整 JD 生成分析报告及一页 A4 可编辑简历。"
