@@ -79,4 +79,3 @@ Produce an evidence-constrained resume and a traceable analysis report. Follow t
 - Do not link the output directory, temporary files, or validation PDFs.
 - State the unresolved-item count and concrete validation evidence: validator success, zero browser/layout/network defects, and both photo states confirmed as one-page A4.
 - Ensure source documents, the private profile, temporary resume JSON, and generated output directories never enter the shareable Skill folder.
-
