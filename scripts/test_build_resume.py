@@ -750,7 +750,7 @@ class PackageContractTests(unittest.TestCase):
         expected_frontmatter = (
             "---\n"
             "name: tailor-resume-to-jd\n"
-            "description: Analyze a company and complete job description, map the role "
+            "description: Analyze a complete job description, map the role "
             "to source-backed candidate evidence, restructure experience with natural "
             "STAR logic, remove AI-sounding language, and generate a one-page editable "
             "A4 HTML resume plus a JD analysis report. Use when a user provides a "
@@ -765,20 +765,19 @@ class PackageContractTests(unittest.TestCase):
         placeholder_alt = "T" + "BD"
         self.assertNotRegex(skill_text, rf"\b(?:{placeholder}|{placeholder_alt})\b")
 
-    def test_skill_has_the_nine_exact_workflow_headings_in_order(self) -> None:
+    def test_skill_has_the_eight_exact_workflow_headings_in_order(self) -> None:
         skill_text = (SKILL_ROOT / "SKILL.md").read_text(encoding="utf-8")
 
         self.assertEqual(
             [
                 "## 1. Inputs and private profile",
                 "## 2. Analyze the JD",
-                "## 3. Research culture",
-                "## 4. Map evidence",
-                "## 5. Rewrite",
-                "## 6. Annotate gaps",
-                "## 7. Write outputs",
-                "## 8. Validate",
-                "## 9. Deliver",
+                "## 3. Map evidence",
+                "## 4. Rewrite",
+                "## 5. Annotate gaps",
+                "## 6. Write outputs",
+                "## 7. Validate",
+                "## 8. Deliver",
             ],
             re.findall(r"^## .+$", skill_text, re.MULTILINE),
         )
@@ -792,8 +791,8 @@ class PackageContractTests(unittest.TestCase):
             "execution, coordination, decision-making, and management",
             "five to ten",
             "business pain points",
-            "official company sources",
-            "JD-language inference",
+            "Use the supplied JD and user-authorized candidate files as the default source set",
+            "Only research public company or business information when the user explicitly asks for that separate work",
             "evidence_id",
             "STAR",
             "never invent",
@@ -805,6 +804,15 @@ class PackageContractTests(unittest.TestCase):
         ):
             with self.subTest(required_phrase=required_phrase):
                 self.assertIn(required_phrase, skill_text)
+
+        for removed_phrase in (
+            "Research culture",
+            "Browse current public information automatically",
+            "official company sources",
+            "culture sources and inferences",
+        ):
+            with self.subTest(removed_phrase=removed_phrase):
+                self.assertNotIn(removed_phrase, skill_text)
 
         for binding_clause in (
             "create or use a profile evidence record with `status: missing`",
@@ -998,3 +1006,4 @@ class PackageContractTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
