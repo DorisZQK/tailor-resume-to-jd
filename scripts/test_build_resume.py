@@ -594,6 +594,17 @@ class ResumeRendererTests(unittest.TestCase):
 
 
 class PackageContractTests(unittest.TestCase):
+    def test_skill_requires_star_for_every_work_and_project_bullet(self):
+        skill_text = (SKILL_ROOT / "SKILL.md").read_text(encoding="utf-8")
+        required_clauses = (
+            "Every work-experience and project-experience bullet must use natural STAR logic",
+            "the necessary situation or task, the candidate's specific action, and a verified result or business impact",
+            "never invent content to complete the STAR structure",
+            "Do not print Situation, Task, Action, Result, or S/T/A/R labels",
+        )
+        for clause in required_clauses:
+            self.assertIn(clause, skill_text)
+
     def test_validator_handles_generic_groups_and_preserves_unmoved_blocks(self) -> None:
         validator_text = (SKILL_ROOT / "scripts" / "validate_resume.mjs").read_text(
             encoding="utf-8"
