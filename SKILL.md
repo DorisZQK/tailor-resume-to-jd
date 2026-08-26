@@ -36,7 +36,10 @@ Produce an evidence-constrained resume and a traceable analysis report. Follow t
 ## 4. Rewrite
 
 - Prioritize job-relevant work, measurable outcomes, and client or business communication.
-- Restructure bullets with natural STAR logic while omitting mechanical Situation/Task/Action/Result labels.
+- Every work-experience and project-experience bullet must use natural STAR logic.
+- Include the necessary situation or task, the candidate's specific action, and a verified result or business impact; compress the situation and task when space is limited, and emphasize action and result.
+- When the authorized evidence cannot support a complete STAR bullet, keep only supported facts, record the gap in the analysis, and never invent content to complete the STAR structure.
+- Do not print Situation, Task, Action, Result, or S/T/A/R labels; the finished bullet must read as concise, natural resume language.
 - Use only verified facts and metrics in the printable resume.
 - Delete or compress low-relevance content to protect one-page readability.
 - Remove AI-sounding boilerplate, inflated claims, repetitive phrasing, and vague self-praise. Keep the language clear, specific, and professional.
